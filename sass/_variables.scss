@@ -1,0 +1,106 @@
+// colors
+$colors:(
+    'color-orange': hsl(26, 100%, 55%),
+    'color-pale-orange': hsl(25, 100%, 94%),
+    'color-very-dark-blue': hsl(220, 13%, 13%),
+    'color-grayish-blue': hsl(220, 14%, 75%),
+    'color-dark-grayish-blue': hsl(219, 9%, 45%),
+    'color-light-grayish-blue': hsl(223, 64%, 98%),
+    'color-white': hsl(0, 0%, 100%),
+    'color-black': hsl(0, 0%, 0%),
+    'color-black-opacity':hsla(0, 0%, 0%, 0.75%)
+);
+
+@function color($color-name){
+    @return map-get($colors, $color-name)
+};
+
+// Font Family
+$font-family-fixed: 'Kumbh Sans', sans-serif;
+
+// Fonts
+
+$font-weight: (
+    'font-weight-small': 300,
+    'font-weight-medium': 500,
+    'font-weight-large': 700,
+    'font-weight-bold': 900);
+
+@function font-weight($font-weight-type){
+    @return map-get($font-weight, $font-weight-type);
+}
+
+$font-size: (
+    'font-size-para': calc(1.3rem + .5vw),
+    'font-size-h3': calc(1.3rem + .75vw),
+    'font-size-h2': calc(1.7rem + 1vw),
+    'font-size-h1': calc(2rem + 1.5vw));
+
+@function font-size($font-size-type){
+    @return map-get($font-size, $font-size-type);
+}
+
+
+/* ------------- Templates ---------------*/
+
+%bg{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+%padding-sec{
+    padding: 2rem 2vh;
+}
+
+%h1-font{
+    font-size: font-size(font-size-h1);
+    font-weight: font-weight(font-weight-bold);
+}
+
+%h2-font{
+    font-size: font-size(font-size-h2);
+    font-weight: font-weight(font-weight-large);
+}
+
+%h3-font{
+    font-size: font-size(font-size-h3);
+    font-weight: font-weight(font-weight-medium);
+}
+
+%para-font{
+    font-size: font-size(font-size-para);
+    font-weight: font-weight(font-weight-small);
+}
+
+
+
+// Media Screen
+$media-screen: (
+    'media-screen-mobile': 400px,
+    'media-screen-tablet': 800px,
+    'media-screen-large': 1000px
+);
+
+@function media-screen($media-screen-size){
+    @return map-get($media-screen, $media-screen-size);
+}
+
+// Mixins media-queries
+@mixin media-mobile{
+    @media screen and (max-width: media-screen('media-screen-mobile')) {
+        @content;        
+    }        
+}
+
+@mixin media-tablet{
+    @media screen and (max-width: media-screen('media-screen-tablet')) {
+        @content;        
+    }        
+}
+
+@mixin media-large{
+    @media screen and (max-width: media-screen('media-screen-large')) {
+        @content;        
+    }        
+}

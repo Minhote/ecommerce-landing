@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <title>Frontend Mentor | E-commerce product page</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;300;500;700;900&display=swap"
+    rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Font Awsome CDN-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header class="header">
+    <!-- Hamburguer -->
+    <div class="header__hamburger">
+      <div class="header__hamburger--line"></div>
+    </div>
+
+    <!-- Logo -->
+    <div class="header__logo-container">
+      <img src="../images/logo.svg" alt="" class="header__logo-container--img">
+    </div>
+
+    <!-- Nav -->
+    <nav class="header__nav">
+      <div class="header__hamburger active">
+        <div class="header__hamburger--line"></div>
+      </div>
+      <ul>
+        <li>
+          <a href="#">Collections</a>
+        </li>
+        <li>
+          <a href="#">Men</a>
+        </li>
+        <li>
+          <a href="#">Woman</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="header__overlay"></div>
+    
+    <!-- Box -->
+    <div class="header__box">
+      <div class="header__box--cart">
+        <img src="../images/icon-cart.svg" alt="cart">
+      </div>
+      <div class="header__box--profile-img">
+        <img src="../images/image-avatar.png" alt="profile">
+      </div>
+    </div>
+  </header>
+  <!--
+  <section class="main">
+    <div class="main__slider-container">
+      <div class="main__slider-container--img-principal">
+        <img src="../images/image-product-1.jpg" alt="" class="main__slider-container--img-principal__img img">
+        //Btn
+        <div class="main__slider-container--img-principal__btn btn-left">
+          <img src="../images/icon-previous.svg" alt="previous">
+        </div>
+        <div class="main__slider-container--img-principal__btn btn-right">
+          <img src="../images/icon-next.svg" alt="next">
+        </div>
+      </div>
+      <div class="main__slider-container--imgs-container">
+        <div class="main__slider-container--imgs-container__img-container">
+          <img src="../images/image-product-1.jpg" alt="" class="main__slider-container--imgs-container__img-container--img img active">
+        </div>
+        <div class="main__slider-container--imgs-container__img-container">
+          <img src="../images/image-product-2.jpg" alt="" class="main__slider-container--imgs-container__img-container--img img">
+        </div>
+        <div class="main__slider-container--imgs-container__img-container">
+          <img src="../images/image-product-3.jpg" alt="" class="main__slider-container--imgs-container__img-container--img img">
+        </div>
+        <div class="main__slider-container--imgs-container__img-container">
+          <img src="../images/image-product-4.jpg" alt="" class="main__slider-container--imgs-container__img-container--img img">
+        </div>
+      </div>
+    </div>
+    <div class="main__content">
+      <p class="main__content--brand">Sneaker Company</p>
+      <h1 class="main__content--title">Fall Limited Edition Sneakers</h1>
+      <p class="main__content--para">These low-profile sneakers are your perfect casual wear companion. Featuring a
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+    </div>
+    <div class="main__content--price-box">
+      <span class="main__content--price-box__actual-price">$125.00</span>
+      <span class="main__content--price-box__discount">50%</span>
+      <span class="main__content--price-box__old-price">$250.00</span>
+    </div>
+    <div class="main__content--cart-box">
+      <div class="main__content--cart-box__amount">
+        <span>
+          <img src="../images/icon-minus.svg" alt="minus">
+        </span>
+        <span>
+          0
+        </span>
+        <span>
+          <img src="../images/icon-plus.svg" alt="plus">
+        </span>
+      </div>
+      <a href="#" class="main__content--cart-box__btn">Add To Cart</a>
+    </div>
+  </section>
+  -->
+  <!--
+  <section class="lightbox">
+    <div class="lightbox__slider-container">
+      <div class="lightbox__slider-container--img-principal">
+        <img src="../images/image-product-1.jpg" alt="" class="lightbox__slider-container--img-principal__img img">
+        !Btns
+        <div class="lightbox__slider-container--img-principal__btn btn-left">
+          <img src="../images/icon-previous.svg" alt="previous">
+        </div>
+        <div class="lightbox__slider-container--img-principal__btn btn-right">
+          <img src="../images/icon-next.svg" alt="next">
+        </div>
+      </div>
+      <div class="lightbox__slider-container--imgs-container">
+        <div class="lightbox__slider-container--imgs-container__img-container">
+          <img src="../images/image-product-1.jpg" alt="" class="lightbox__slider-container--imgs-container__img-container--img img active">
+        </div>
+        <div class="lightbox__slider-container--imgs-container__img-container">
+          <img src="../images/image-product-2.jpg" alt="" class="lightbox__slider-container--imgs-container__img-container--img img">
+        </div>
+        <div class="lightbox__slider-container--imgs-container__img-container">
+          <img src="../images/image-product-3.jpg" alt="" class="lightbox__slider-container--imgs-container__img-container--img img">
+        </div>
+        <div class="lightbox__slider-container--imgs-container__img-container">
+          <img src="../images/image-product-4.jpg" alt="" class="lightbox__slider-container--imgs-container__img-container--img img">
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+  <!-- Script -->
+  <script src="../js/header.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a fixed value of font size */
+html {
+  font-size: 62.5%;
+}
+
+/* Template Layout */
+body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content 90vh;
+  gap: 2vh;
+}
+
+/* ------------- Templates ---------------*/
+.header {
+  padding: 2rem 2vh;
+}
+
+.header__nav ul li a {
+  font-size: calc(1.3rem + 0.5vw);
+  font-weight: 300;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1/-1;
+  height: 10vh;
+  flex-wrap: wrap;
+}
+.header__logo-container {
+  flex: 0 1 10rem;
+  height: 100%;
+}
+.header__logo-container img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+.header__hamburger {
+  display: none;
+  height: 3rem;
+  width: 3rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+.header__hamburger--line {
+  width: 1.5rem;
+  height: 2px;
+  background-color: hsl(0deg, 0%, 0%);
+  transition: all 0.5s ease-in-out;
+}
+.header__hamburger--line::after, .header__hamburger--line::before {
+  position: absolute;
+  content: "";
+  height: inherit;
+  width: inherit;
+  background-color: hsl(0deg, 0%, 0%);
+  left: 7px;
+  transition: all 0.5s ease-in-out;
+}
+.header__hamburger--line::before {
+  top: 8px;
+}
+.header__hamburger--line::after {
+  bottom: 8px;
+}
+.header__hamburger.active {
+  display: none;
+  z-index: 3;
+}
+.header__hamburger.active .header__hamburger--line {
+  background-color: transparent;
+}
+.header__hamburger.active .header__hamburger--line::before {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.header__hamburger.active .header__hamburger--line::after {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+.header__nav {
+  flex: 1 0 40rem;
+  height: 100%;
+  margin: 0 2rem;
+  z-index: 3;
+  transition: all 0.5s ease-in-out;
+}
+.header__nav ul {
+  height: inherit;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.header__nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 2rem;
+  position: relative;
+  transition: all 0.5d ease-in-out;
+}
+.header__nav ul li::before {
+  display: block;
+  content: "";
+  position: absolute;
+  background-color: hsl(26deg, 100%, 55%);
+  width: 100%;
+  height: 3px;
+  bottom: -50%;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.header__nav ul li:hover:before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.header__nav ul li a {
+  text-decoration: none;
+  color: hsl(219deg, 9%, 45%);
+}
+.header__nav ul li a:hover {
+  color: hsl(220deg, 13%, 13%);
+}
+.header__overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(220deg, 13%, 13%);
+  filter: opacity(0.4);
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in-out;
+}
+.header__box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex: 0 0 10rem;
+  gap: 3rem;
+}
+.header__box--profile-img img {
+  height: 5rem;
+  width: 5rem;
+}
+.header__box--profile-img img:hover {
+  border: 0.2rem solid hsl(26deg, 100%, 55%);
+  border-radius: 50%;
+}
+@media screen and (max-width: 800px) {
+  .header__hamburger {
+    display: flex;
+    z-index: 3;
+  }
+  .header__hamburger.active {
+    display: flex;
+  }
+  .header__nav {
+    position: absolute;
+    width: 20rem;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: hsl(0deg, 0%, 100%);
+    padding: 2rem 0 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    transform: translateX(-100%);
+  }
+  .header__nav ul {
+    height: auto;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header__nav ul li {
+    margin: 1rem 0;
+  }
+  .header__nav ul li::before {
+    display: none;
+  }
+  .header__nav ul li a {
+    color: hsl(220deg, 13%, 13%);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,23 @@
+/* reset */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a fixed value of font size */
+html{
+    font-size: 62.5%;
+}
+
+/* Template Layout */
+body{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content 90vh;
+    gap: 2vh;
+   
+}
+
