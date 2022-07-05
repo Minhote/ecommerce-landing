@@ -8,7 +8,6 @@ $colors:(
     'color-light-grayish-blue': hsl(223, 64%, 98%),
     'color-white': hsl(0, 0%, 100%),
     'color-black': hsl(0, 0%, 0%),
-    'color-black-opacity':hsla(0, 0%, 0%, 0.75%)
 );
 
 @function color($color-name){
@@ -55,7 +54,7 @@ $font-size: (
 
 %h1-font{
     font-size: font-size(font-size-h1);
-    font-weight: font-weight(font-weight-bold);
+    font-weight: font-weight(font-weight-large);
 }
 
 %h2-font{
@@ -70,7 +69,7 @@ $font-size: (
 
 %para-font{
     font-size: font-size(font-size-para);
-    font-weight: font-weight(font-weight-small);
+    font-weight: font-weight(font-weight-medium);
 }
 
 
