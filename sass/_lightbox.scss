@@ -1,0 +1,111 @@
+@use './variables' as *;
+
+.lightbox{
+    display: none;
+    position: fixed;
+    z-index: 3;
+    inset: 0 0 0 0;
+    background-color: rgba(color(color-black), 0.75);
+    align-items: center;
+    justify-content: center;
+
+    & > img{
+        position: absolute;
+        top: 2rem;
+        right: 38rem;
+        height: 2rem;
+        width: 2rem;
+    }
+
+    &__slider-container{
+        display: flex;
+        flex-direction: column;
+        gap: 0 2rem;
+        height: 55rem;
+        width: 60rem;
+
+        &--img-principal{
+            height: 70%;
+            position: relative;
+            width: 100%;
+
+
+            & > img{
+                height: 100%;
+                width: 100%;
+                object-position: top;
+                object-fit: cover; 
+                border-radius: 20px;
+            }
+
+            &__btn{
+                display: flex;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: color(color-white);
+                height: 40px;
+                width: 40px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+
+                & > img{
+                    height: 15px;
+                    width: 15px;
+                    object-fit: contain;
+                }
+            }
+
+            & .btn-left{
+                left: -20px;
+
+                & img{
+                    transform: translateX(-10%);
+                }
+            }
+
+            & .btn-right{
+                right: -20px;
+
+                & img{
+                    transform: translateX(10%);
+                }
+            }
+        }
+
+        &--imgs-container{
+            height: 30%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__img-container{
+                height: 80%;
+                border-radius: 20px;
+                overflow: hidden;
+                width: min(12rem,20%);
+
+                &--img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__img-container.active{
+                border: 2px solid color(color-orange);
+
+                & img{
+                    filter: sepia(100%);
+                }
+            }
+        }
+
+    }
+}
+
+.lightbox.active{
+    display: flex;
+}

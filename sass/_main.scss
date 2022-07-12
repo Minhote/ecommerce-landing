@@ -19,7 +19,7 @@
         width: 350px;
 
         &--img-principal{
-            height: 60%;
+            height: 70%;
             position: relative;
             width: 100%;
             overflow: hidden;
@@ -28,6 +28,7 @@
             & > img{
                 height: 100%;
                 width: 100%;
+                object-position: top;
                 object-fit: cover;
             }
 
@@ -85,6 +86,14 @@
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
+                }
+            }
+
+            &__img-container.active{
+                border: 2px solid color(color-orange);
+
+                & img{
+                    filter: opacity(0.5);
                 }
             }
         }
@@ -157,6 +166,10 @@
                 justify-content: space-between;
                 align-items: center;
 
+                & span:not(:nth-child(2)):hover{
+                    opacity: 0.8;
+                }
+
                 & span:nth-child(2){
                     font-size: font-size(font-size-h3);
                 }
@@ -172,6 +185,11 @@
                 text-align: center;
                 font-size: font-size(font-size-para);
                 font-weight: font-weight(font-weight-medium);
+                opacity: 1;
+
+                &:hover{
+                    opacity: 0.7;
+                }
             }
         }
     }

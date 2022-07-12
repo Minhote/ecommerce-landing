@@ -59,7 +59,12 @@
     <!-- Box -->
     <div class="header__box">
       <div class="header__box--cart">
+        <span>0</span>
         <img src="../images/icon-cart.svg" alt="cart">
+        <div class="header__box--cart__preview">
+          <h2 class="header__box--cart__preview--title">Cart</h2>
+          <div class="header__box--cart__preview--description"></div>
+        </div>
       </div>
       <div class="header__box--profile-img">
         <img src="../images/image-avatar.png" alt="profile">
@@ -80,16 +85,16 @@
         <!-- BTN-->
       </div>
       <div class="main__slider-container--imgs-container">
-        <div class="main__slider-container--imgs-container__img-container">
-          <img src="../images/image-product-1.jpg" alt="" class="main__slider-container--imgs-container__img-container--img img active">
+        <div class="main__slider-container--imgs-container__img-container active" data-id="1">
+          <img src="../images/image-product-1.jpg" alt="" class="main__slider-container--imgs-container__img-container--img img">
         </div>
-        <div class="main__slider-container--imgs-container__img-container">
+        <div class="main__slider-container--imgs-container__img-container" data-id="2">
           <img src="../images/image-product-2.jpg" alt="" class="main__slider-container--imgs-container__img-container--img img">
         </div>
-        <div class="main__slider-container--imgs-container__img-container">
+        <div class="main__slider-container--imgs-container__img-container" data-id="3">
           <img src="../images/image-product-3.jpg" alt="" class="main__slider-container--imgs-container__img-container--img img">
         </div>
-        <div class="main__slider-container--imgs-container__img-container">
+        <div class="main__slider-container--imgs-container__img-container" data-id="4">
           <img src="../images/image-product-4.jpg" alt="" class="main__slider-container--imgs-container__img-container--img img">
         </div>
       </div>
@@ -122,12 +127,11 @@
       </div>
     </div>
   </section>
-  <!--
   <section class="lightbox">
+    <img src="../images/icon-close.svg" alt="">
     <div class="lightbox__slider-container">
       <div class="lightbox__slider-container--img-principal">
         <img src="../images/image-product-1.jpg" alt="" class="lightbox__slider-container--img-principal__img img">
-        !Btns
         <div class="lightbox__slider-container--img-principal__btn btn-left">
           <img src="../images/icon-previous.svg" alt="previous">
         </div>
@@ -136,24 +140,24 @@
         </div>
       </div>
       <div class="lightbox__slider-container--imgs-container">
-        <div class="lightbox__slider-container--imgs-container__img-container">
+        <div class="lightbox__slider-container--imgs-container__img-container active" data-id="1">
           <img src="../images/image-product-1.jpg" alt="" class="lightbox__slider-container--imgs-container__img-container--img img active">
         </div>
-        <div class="lightbox__slider-container--imgs-container__img-container">
+        <div class="lightbox__slider-container--imgs-container__img-container" data-id="2">
           <img src="../images/image-product-2.jpg" alt="" class="lightbox__slider-container--imgs-container__img-container--img img">
         </div>
-        <div class="lightbox__slider-container--imgs-container__img-container">
+        <div class="lightbox__slider-container--imgs-container__img-container" data-id="3">
           <img src="../images/image-product-3.jpg" alt="" class="lightbox__slider-container--imgs-container__img-container--img img">
         </div>
-        <div class="lightbox__slider-container--imgs-container__img-container">
+        <div class="lightbox__slider-container--imgs-container__img-container" data-id="4">
           <img src="../images/image-product-4.jpg" alt="" class="lightbox__slider-container--imgs-container__img-container--img img">
         </div>
       </div>
     </div>
   </section>
-  -->
+  
   <!-- Script -->
-  <script src="../js/header.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>

@@ -128,8 +128,8 @@
 
     &__overlay{
         display: block;
-        //z-index: 2;
-        position: absolute;
+        z-index: 2;
+        position: fixed;
         top: 0;
         left: 0;
         height: 100%;
@@ -146,6 +146,95 @@
         align-items: center;
         flex: 0 0 10rem;
         gap: 3rem;
+
+        &--cart{
+            position: relative;
+
+            & > span{
+                display: none;
+                position: absolute;
+                height: 2.3rem;
+                width: 2.3rem;
+                background-color: color(color-orange);
+                top: -1.5rem;
+                right: -1.5rem;
+                border-radius: 50%;
+                color: color(color-white);
+                align-items: center;
+                justify-content: center;
+                font-size: font-size(font-size-para);
+            }
+
+            &__preview{
+                display: none;
+                position: absolute;
+                bottom: -27rem;
+                background-color: hsl(0deg, 0%, 100%);
+                min-height: 25rem;
+                width: 40rem;
+                left: -29rem;
+                border: 1px solid gray;
+                border-radius: 10px;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0px 0px 10px 2px rgba(color(color-dark-grayish-blue),0.75);;
+
+                &--title{
+                    font-size: font-size(font-size-h3);
+                }
+
+                &--description{
+                    color: color(color-dark-grayish-blue);
+                    flex-basis: 50%;
+                    flex-grow: 1;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: font-size(font-size-para);
+
+                    &__content{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 1.5rem;
+
+                        &--img{
+                            height: 8rem;
+                            width: 8rem;
+                            object-fit: cover;
+                        }
+
+                        &--container{
+                            display: flex;
+                            align-items: flex-start;
+                            flex-direction: column;
+
+                            &__span{
+                                & > strong{
+                                    font-weight: font-weight(font-weight-large);
+                                    color: color(color-black);
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                &--btn{
+                    background-color: color(color-orange);
+                    color: color(color-white);
+                    padding: 1.5rem 1rem;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-size: font-size(font-size-para);
+                }
+            }
+
+            &__preview.active{
+                display: flex;
+            }
+        }
 
         &--profile-img{
             & img{
@@ -171,7 +260,7 @@
         }
 
         &__nav{
-            position: absolute;
+            position: fixed;
             width: 20rem;
             top: 0;
             left: 0;
