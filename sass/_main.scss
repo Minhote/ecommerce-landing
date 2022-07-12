@@ -16,7 +16,6 @@
         flex-direction: column;
         gap: 0 2rem;
         height: 50rem;
-        width: 350px;
 
         &--img-principal{
             height: 70%;
@@ -207,6 +206,63 @@
                     flex-basis: 40rem;
                 }
             }
+        }
+    }
+
+    @include media-tablet{
+        padding: 0;
+        gap: 5rem;
+
+        &__slider-container{
+            height: 30rem;
+
+            &--img-principal{
+                overflow: visible;
+                height: 100%;
+
+                &__btn{
+                    display: flex;
+                }
+            }
+
+            &--imgs-container{
+                display: none;
+            }
+        }
+
+        &__content{
+            height: auto;
+            gap: 5rem;
+
+            &--description{
+                &__para{
+                    font-size: font-size(font-size-h2);
+                }
+            }
+
+            &--cart-box{
+                gap: 3rem;
+
+                &__amount{
+                    flex-grow: 1;
+                    flex-basis: 25rem;
+                }
+
+                &__btn{
+                    flex-grow: 1;
+                    flex-basis: 25rem;
+                }
+            }
+        }
+    }
+
+    @include media-mobile{
+        &__slider-container{
+            flex: 1 0 20rem;
+        }
+
+        &__content{
+            flex: 1 0 20rem;
         }
     }
 }

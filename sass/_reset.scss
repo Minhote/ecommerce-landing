@@ -19,5 +19,11 @@ body{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: min-content 90vh;
     font-family: $font-family-fixed;
+
+    @include media-tablet{
+        gap: 1rem;
+        padding-bottom: 3rem;
+        grid-template-rows: min-content min-content;
+    }
 }
 

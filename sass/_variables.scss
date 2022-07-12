@@ -33,7 +33,7 @@ $font-size: (
     'font-size-para': calc(1.3rem + .5vw),
     'font-size-h3': calc(1.3rem + .75vw),
     'font-size-h2': calc(1.7rem + 1vw),
-    'font-size-h1': calc(2rem + 1.5vw));
+    'font-size-h1': calc(2.6rem + 1.5vw));
 
 @function font-size($font-size-type){
     @return map-get($font-size, $font-size-type);

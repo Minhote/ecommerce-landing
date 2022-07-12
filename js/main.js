@@ -44,6 +44,37 @@ listOfContainers.forEach((container) => {
 
 })
 
+/* ------------------------- Slider (with arrows in 800px or below) --------------------------*/
+const btnLeftSilder = document.querySelector('.main__slider-container--img-principal__btn.btn-left')
+const btnRightSilder = document.querySelector('.main__slider-container--img-principal__btn.btn-right')
+let counter = 1;
+
+btnLeftSilder.style.display = 'none'
+
+btnLeftSilder.addEventListener('click', () =>{
+    counter--;
+
+    imgPrincipal.setAttribute('src', `../images/image-product-${counter}.jpg`)
+
+    if (counter == 1) {
+        btnLeftSilder.style.display = 'none'
+    }else if(counter < 4){
+        btnRightSilder.style.display = 'flex'
+    }
+})
+
+btnRightSilder.addEventListener('click', () =>{
+    counter++;
+
+    imgPrincipal.setAttribute('src', `../images/image-product-${counter}.jpg`)
+
+    if (counter == 4) {
+        btnRightSilder.style.display = 'none'
+    }else if(counter > 1){
+        btnLeftSilder.style.display = 'flex'
+    }
+})
+
 /* ------------------------- Cart Box --------------------------*/
 const minus = document.querySelector('.main__content--cart-box__amount span:nth-child(1)')
 const amount = document.querySelector('.main__content--cart-box__amount span:nth-child(2)')
@@ -144,15 +175,25 @@ function fillCartBox(){
 
 /* ------------------------- Turn On/Off Lightbox --------------------------*/
 const lightBox = document.querySelector('.lightbox')
-const btnCloseLightbox = document.querySelector('.lightbox > img')
+const btnCloseLightbox = document.querySelector('.lightbox__slider-container > img')
 const btnleftLightbox = document.querySelector('.lightbox__slider-container--img-principal__btn.btn-left')
 const btnRightLightbox = document.querySelector('.lightbox__slider-container--img-principal__btn.btn-right')
 const containerImgsLightbox = document.querySelector('.lightbox__slider-container--imgs-container').children
 const imgPrincipalSliderLightbox = document.querySelector('.lightbox__slider-container--img-principal > img')
 let indexOfContainers;
-imgPrincipal.addEventListener('click', () =>{
+
+function addActive() {
     lightBox.classList.add('active')
-})
+}
+
+imgPrincipal.addEventListener('click', addActive)
+
+//Remove Lightbox Event for 800px or below 
+if(window.screen.width <= 800){
+    imgPrincipal.removeEventListener('click', addActive)
+}
+
+//Remove Lightbox Event for 800px or below 
 
 btnCloseLightbox.addEventListener('click', ()=>{
     lightBox.classList.remove('active')
@@ -201,7 +242,7 @@ btnRightLightbox.addEventListener('click', ()=>{
     }
 
     imgPrincipalSliderLightbox.setAttribute('src', `../images/image-product-${indexOfContainers}.jpg`)
-    
+
     if (indexOfContainers== 4) {
         btnRightLightbox.style.display = 'none'
     }else if (indexOfContainers > 1) {
